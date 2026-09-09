@@ -1,6 +1,6 @@
 import { completeOrder } from "@/actions/complete-order-action"
 import { OrderWithProducts } from "@/src/generated/prisma/types"
-import { formatCurrency } from "@/src/generated/prisma/utils"
+import { formatCurrency } from "@/src/utils"
 import { KeyedMutator } from "swr"
 
 type OrderCardProps = {

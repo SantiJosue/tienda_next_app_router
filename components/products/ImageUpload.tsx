@@ -1,5 +1,5 @@
 "use client"
-import { getImagePath } from "@/src/generated/prisma/utils"
+import { getImagePath } from "@/src/utils"
 import { CldUploadWidget } from "next-cloudinary"
 import Image from "next/image"
 import { useState } from "react"

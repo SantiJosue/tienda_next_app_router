@@ -1,6 +1,6 @@
-import { useStore } from "@/src/generated/prisma/store";
+import { useStore } from "@/src/store";
 import { OrderItem } from "@/src/generated/prisma/types"
-import { formatCurrency } from "@/src/generated/prisma/utils";
+import { formatCurrency } from "@/src/utils";
 import { MinusIcon, PlusIcon, XCircleIcon } from "@heroicons/react/16/solid";
 import { useMemo } from "react";
 
