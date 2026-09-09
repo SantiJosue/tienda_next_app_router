@@ -69,7 +69,7 @@ export default function DeleteProductButton({
                         <p className="mt-3 text-sm text-gray-600">
                             ¿Estás seguro que querés eliminar{" "}
                             <span className="font-semibold text-gray-900">
-                                "{productName}"
+                                {productName}
                             </span>
                             ?
                         </p>
