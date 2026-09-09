@@ -3,6 +3,7 @@ import useSWR from 'swr';
 import Logo from "@/components/ui/Logo";
 import { OrderWithProducts } from '@/src/types';
 import LatestOrderItem from '@/components/order/LatestOrderItem';
+import GoBackButton from '@/components/ui/GoBackButton';
 
 export default function OrdersPage() {
   const url = '/orders/api'
@@ -14,8 +15,11 @@ export default function OrdersPage() {
 
   if (isLoading) return <p>Cargando...</p>
   if (data) return (
-    <>
-      <h1 className="text-center mt-20 text-6xl font-black">Ordenes Listas</h1>
+    <section className='mx-10'>
+      <div className='flex flex-col justify-center items-center'>
+        <h1 className="text-center mt-20 mb-2 text-4xl md:text-6xl font-black">Ordenes Listas</h1>
+        <GoBackButton />
+      </div>
 
       <Logo />
       {data.length ? (
@@ -27,6 +31,6 @@ export default function OrdersPage() {
       ) : (
         <p className="text-center my-10">No hay ordenes listas</p>
       )}
-    </>
+    </section>
   )
 }

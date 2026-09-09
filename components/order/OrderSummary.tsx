@@ -5,10 +5,14 @@ import { formatCurrency } from "@/src/utils"
 import { createOrder } from "@/actions/create-order-action"
 import { OrderSchema } from "@/src/schema"
 import { toast } from "react-toastify"
+import { useRouter } from "next/navigation"
+import { useState } from "react"
 
 export default function OrderSummary() {
   const order = useStore((state) => state.order)
   const clearOrder = useStore((state) => state.clearOrder)
+  const [orderCreated, setOrderCreated] = useState(false)
+  const router = useRouter()
   const total = order.reduce((total, item) => total + (item.quantity * item.price), 0)
 
   const handleCreateOrder = async (formData: FormData) => {
@@ -32,6 +36,7 @@ export default function OrderSummary() {
 
     toast.success('Pedido realizado correctamente')
     clearOrder()
+    setOrderCreated(true)
   }
 
   return (
@@ -68,6 +73,14 @@ export default function OrderSummary() {
             </form>
           </section>
         )}
+
+        {orderCreated && (
+          <button
+            onClick={() => router.push('/orders')}
+            className="bg-indigo-600 hover:bg-indigo-800 text-white w-full mt-5 p-3 uppercase font-bold cursor-pointer"
+          >Ver órdenes listas</button>
+        )}
+
     </aside>
   )
 }
