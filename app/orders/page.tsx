@@ -1,7 +1,7 @@
 "use client"
 import useSWR from 'swr';
 import Logo from "@/components/ui/Logo";
-import { OrderWithProducts } from '@/src/generated/prisma/types';
+import { OrderWithProducts } from '@/src/types';
 import LatestOrderItem from '@/components/order/LatestOrderItem';
 
 export default function OrdersPage() {

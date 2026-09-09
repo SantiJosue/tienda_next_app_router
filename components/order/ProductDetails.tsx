@@ -1,5 +1,5 @@
 import { useStore } from "@/src/store";
-import { OrderItem } from "@/src/generated/prisma/types"
+import { OrderItem } from "@/src/types"
 import { formatCurrency } from "@/src/utils";
 import { MinusIcon, PlusIcon, XCircleIcon } from "@heroicons/react/16/solid";
 import { useMemo } from "react";

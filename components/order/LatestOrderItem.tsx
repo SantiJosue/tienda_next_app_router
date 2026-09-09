@@ -1,4 +1,4 @@
-import { OrderWithProducts } from "@/src/generated/prisma/types"
+import { OrderWithProducts } from "@/src/types"
 
 type LatestOrderItemProps = {
     order: OrderWithProducts
